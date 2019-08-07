@@ -1,0 +1,352 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   style.css                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mayday <mayday@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/07/27 14:56:41 by mayday            #+#    #+#             */
+/*   Updated: 2019/08/06 20:46:45 by mayday           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+html
+{
+	width: 100%;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 20px;
+	letter-spacing: 2px;
+	color: white;
+}
+
+body
+{
+	background: url("../../resources/img/bg-pattern.png"), linear-gradient(to left, #7b4397, #dc2430);
+	/*background: rgb(44, 44, 44);*/
+	width: 100%;
+	margin: 0;
+    padding: 0;
+}
+
+a
+{
+	text-decoration: none;
+	color: white;
+}
+
+nav
+{
+	width: 100%;
+	background: rgba(255,255,255,0.55);
+	position: fixed;
+	transform:translateX(-50%);
+	left: 50%;
+	top: 0;
+	border-bottom: solid 2px white;
+	z-index: 3;
+	color: #7b4397;
+}
+
+nav > #container
+{
+	padding-top: 10px;
+	padding-bottom: 10px;
+	margin: 0 auto;
+	width: 60%;
+	display: flex;
+	align-items: center;
+	color: white;
+}
+
+nav > #container > div
+{
+	flex: 1;
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 17px;
+	color: #dc2430;
+}
+
+#feed
+{
+	width: 80%;
+	padding-top: 100px;
+	margin: 0 auto;
+}
+
+#element
+{
+	width: 60%;
+	margin: 0 auto;
+	border: solid 1px lightgray;
+	background-color: rgba(255,255,255,0.25);
+	margin-bottom: 50px;
+}
+
+#element > #userpseudo
+{
+	padding-top: 10px;
+	padding-left: 40px;
+	padding-bottom: 10px;
+	font-weight: bold;	
+}
+
+#element > #picture
+{
+	width: 90%;
+	height: auto;
+	margin: 0 auto;
+	background: rgba(255,255,255,0.20);
+}
+
+#element > #picture > a > img
+{
+	width: 100%;
+	height: auto;
+	margin-left: auto;
+	margin-right: auto;
+	object-fit: fill;
+}
+
+#element > #likebar
+{
+	width: 80%;
+	margin: 0 auto;
+	padding-top: 5px;
+	display: flex;
+}
+
+#element > #likebar > #likebox
+{
+	flex: 1;
+	width: 25%;
+	margin: 0 auto;
+}
+
+#likebox > form
+{
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	margin-block-end:0;
+
+}
+
+#likebox > form > *
+{
+	flex: 1;
+	
+}
+
+#likebox > form > input[type=button]
+{
+	border: none;
+	background-color: transparent;
+	display: inline;
+	color: white;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 20px;
+}
+
+#likebox > form > input[type=button]:hover
+{
+	text-decoration: underline;
+}
+
+#likebox > form > span
+{
+	margin-left: 5px;
+	text-align: center;
+}
+
+#element > #commentbox
+{
+	margin: 0 auto;
+	margin-top: 5px;
+	width: 80%;	
+}
+
+#comment
+{
+	background: rgba(255,255,255,0.20);
+	border-radius: 10px;
+	padding: 10px;
+	word-break: break-word;
+	margin-bottom: 10px;
+}
+
+#comment span
+{
+	font-weight: bold;
+	padding-right: 20px;
+}
+
+#comment input
+{
+	width: 100%;
+	transition: 0.5s;
+	outline: none;
+	font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+	font-size: 20px;
+}
+
+#comment input[type=text]:focus
+{
+	border: 3px solid lightgray;
+}
+
+#comment > #delete
+{
+	background: rgba(173, 0, 0, 0.575);
+	border: 1px solid white;
+	color: white;
+}
+
+#error
+{
+	margin-top: 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+	border-radius: 5px;
+	background-color: rgba(255, 0, 0, 0.4);
+	color: white;
+}
+
+#alert-container
+{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.70);
+	z-index: 20;
+}
+
+#alert
+{
+	margin: 0 auto;
+	width: 30%;
+	height: 20%;
+	border-radius: 10px;
+	border: 3px solid #dc2430;
+	background: rgba(255, 255, 255, 0.80);
+	text-align: center;
+
+	animation-name: move;
+	animation-duration: 0.5s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 0s;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+#alert > #message
+{
+	margin: 0 auto;
+	margin-top: 10px;
+	min-width: 80%;
+	height: 70%;
+	text-align: center;
+	color: #dc2430;
+}
+
+#alert > button
+{
+	width: 60%;
+	height: 40px;
+	background: #dc2430;
+	color: white;
+	border: none;
+	border-radius: 5px;
+	font-size: 20px;
+	transition: 0.3s;
+}
+
+#alert > button:hover
+{
+	width: 60%;
+	height: 40px;
+	background: white;
+	color: #dc2430;
+	border: 1px solid #dc2430;
+	border-radius: 5px;
+	font-size: 20px;
+}
+
+#nothin
+{
+	opacity: 0;
+	width: 100%;
+	animation-name: appear;
+	animation-duration: 1s;
+	animation-timing-function: ease-in-out;
+	animation-delay: 10s;
+	animation-direction: alternate;
+	animation-iteration-count: 1;
+	animation-fill-mode: forwards;
+	animation-play-state: running;
+}
+
+@keyframes appear
+{
+	0%
+	{
+		opacity: 0;
+	}
+	50%
+	{
+		opacity: 1;
+	}
+	100%
+	{
+		opacity: 0;
+	}
+}
+
+@keyframes move
+{
+	0%
+	{
+		transform: translateY(0);
+	}
+	100%
+	{
+		transform: translateY(300px);
+	}
+}
+@media only screen and (max-width: 600px)
+{
+	nav > #container
+	{
+		flex-direction: column;
+	}
+	#feed
+	{
+		padding-top: 170px;
+	}
+	#element
+	{
+		width: 100%;
+	}
+	#element > #userpseudo
+	{
+		padding-left: 10px;
+		font-weight: bold;	
+	}
+	#element > #likebar
+	{
+		flex-direction: column;
+	}
+	#likebox > form
+	{
+		flex-direction: row;
+	}
+	#alert
+	{
+		width: 80%;
+	}
+}
