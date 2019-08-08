@@ -3,15 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   confirm.js                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mayday <mayday@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 20:00:11 by mayday            #+#    #+#             */
-/*   Updated: 2019/08/06 20:41:12 by mayday           ###   ########.fr       */
+/*   Updated: 2019/08/08 22:56:58 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 function createConfirmView(params)
 {
+	if (!getToken())
+		return ;
 	const user_id = params.get("user_id");
 	const confirm = params.get("confirm");
 

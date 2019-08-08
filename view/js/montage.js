@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   montage.js                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mayday <mayday@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 15:44:01 by mayday            #+#    #+#             */
-/*   Updated: 2019/08/05 22:49:05 by mayday           ###   ########.fr       */
+/*   Updated: 2019/08/08 22:57:23 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,8 @@ function generateMontageForm()
 
 function createMontageView()
 {
+	if (!getToken())
+		return ;
 	const feed = document.getElementById("feed");
 	const element = document.createElement("div");
 	const videoContainer = document.createElement("div");
@@ -59,23 +61,34 @@ function createMontageView()
 	videoContainer.id = "video-container";
 	choiceBar.id = "choice-bar";
 	filterBar.id = "filter-bar";
-	
-	webcam.loading
-		.then((stream) => {
-			const video = document.createElement("video");
 
-			video.id = "actual-element";
-			video.autoplay = "true";
-			video.srcObject = stream;
-			videoContainer.appendChild(video);
-			
-		})
-		.catch((error) => {
-			console.error(`Could not access camera: ${error.message}`);
-			createAlert("Could not access camera. Please select a picture instead !");
-			
-		})
+	try {
+		webcam.start();
+	}
+	catch (e) {
+	}
+	if (webcam.loading)
+	{
+		webcam.loading
+			.then((stream) => {
+				const video = document.createElement("video");
 
+				video.id = "actual-element";
+				video.autoplay = "true";
+				video.srcObject = stream;
+				videoContainer.appendChild(video);
+				
+			})
+			.catch((error) => {
+				console.error(`Could not access camera: ${error.message}`);
+				createAlert("Could not access camera. Please select a picture instead !");
+				
+			})
+	}
+	else
+	{
+		createAlert("Could not access camera. Please select a picture instead !");
+	}
 	choiceBar.appendChild(form);
 	element.appendChild(videoContainer);
 	element.appendChild(choiceBar);

@@ -25,7 +25,8 @@ function createDatabase()
 		$database->query("USE camagru;");
 		return (0);
 	}
-
+	if (isset($_COOKIE['token']))
+		setcookie('token', "", time() - 10, '/');
 	$database->query("CREATE DATABASE IF NOT EXISTS camagru");
 	$database->query("USE camagru;");
 	$database->query("CREATE TABLE user (

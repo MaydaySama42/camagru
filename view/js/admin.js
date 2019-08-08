@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   admin.js                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mayday <mayday@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/06 00:15:35 by mayday            #+#    #+#             */
-/*   Updated: 2019/08/06 17:50:39 by mayday           ###   ########.fr       */
+/*   Updated: 2019/08/08 22:56:55 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ function getValuesFromDB()
 
 function createAdminView()
 {
+	if (!getToken())
+		return ;
 	const feed = document.getElementById("feed");
 	const element = document.createElement("div");
 	const commentbox = document.createElement("div");
