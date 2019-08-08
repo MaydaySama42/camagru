@@ -30,7 +30,7 @@ function sendNotificationNewComment($pic_id, $actual_user_id)
 			'you got a new comment',
 			"hi, camagru team here !\n\n
 			you got a new comment on your picture:\n\n
-			http://localhost/camagru/view/?view=pic&pic_id=" . $pic_id . "\n\n
+			http://10.11.200.226/camagru/view/?view=pic&pic_id=" . $pic_id . "\n\n
 			hope we'll see you soon !\n\n
 			camagru team",
 			'From: team@camagru.com' . "\r\n" . 'Reply-To: team@camagru.com' . "\r\n");

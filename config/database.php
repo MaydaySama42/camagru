@@ -13,7 +13,7 @@
 
 require_once("setup.php");
 
-$db["host"] = "192.168.1.48";
+$db["host"] = "127.0.0.1";
 $db["port"] = '3306';
 $db["user"] = "root";
 $db["pwd"] = "root";
@@ -28,7 +28,8 @@ try
 catch(Exception $e)
 {
         echo 'Erreur : '.$e->getMessage().'<br />';
-        echo 'N° : '.$e->getCode();
+		echo 'N° : '.$e->getCode();
+		sendResponse("Database error", 400);
 }
 
 ?>

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   manageWebcam.js                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mayday <mayday@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 17:05:52 by mayday            #+#    #+#             */
-/*   Updated: 2019/08/06 22:22:13 by mayday           ###   ########.fr       */
+/*   Updated: 2019/08/08 20:14:50 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ class WebcamManager {
 		if (this.stream)
 			throw new Error("Stream has already been set !");
 		this.loading = navigator.mediaDevices
-			.getUserMedia({video: true, audio: true})
+			.getUserMedia({ video: true })
 			.then((stream) => {
 				this.stream = stream;
 				return this.stream;

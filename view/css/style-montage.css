@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   style-montage.css                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mayday <mayday@student.42.fr>              +#+  +:+       +#+        */
+/*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/06/08 00:41:20 by mdalil            #+#    #+#             */
-/*   Updated: 2019/08/05 02:30:05 by mayday           ###   ########.fr       */
+/*   Updated: 2019/08/08 20:17:46 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,13 +94,13 @@
 
 #filter-contain img:hover
 {
-	filter: brightness(0.8);
+	filter: grayscale(100%) brightness(40%) sepia(100%) hue-rotate(-50deg) saturate(600%) contrast(0.8);
 	transition: all 0.2s;
 }
 
 .filter-selected
 {
-	border: 2px solid blue;
+	filter: grayscale(100%) brightness(30%) sepia(100%) hue-rotate(-180deg) saturate(700%) contrast(0.8);
 }
 
 @media only screen and (max-width: 600px)

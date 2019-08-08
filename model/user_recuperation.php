@@ -20,7 +20,7 @@ function sendRecuperationLink($mail, $user_id, $confirm)
 		'Get a new password',
 		"Hi, welcome to Camagru !\n
 		\nIf you want to get a new password, please click the following link:\n
-		\nhttp://localhost/camagru/view/?view=pass&user_id=" . $user_id . "&confirm=" . $confirm . "\n
+		\nhttp://10.11.200.226/camagru/view/?view=pass&user_id=" . $user_id . "&confirm=" . $confirm . "\n
 		\nHope we'll see you soon !\n
 		\nCamagru Team",
 		'From: team@camagru.com' . "\r\n" . 'Reply-To: team@camagru.com' . "\r\n");
