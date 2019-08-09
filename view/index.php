@@ -47,4 +47,5 @@
 		<script type="text/javascript" src="js/forget.js"></script>
 		<script type="text/javascript" src="js/generateView.js"></script>
 	</body>
+	
 </html>

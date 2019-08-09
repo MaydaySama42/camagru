@@ -15,6 +15,7 @@ require_once("../config/database.php");
 
 define("REGEX_MAIL", "/^[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*@[a-zA-Z0-9]+(\.[a-zA-Z0-9]+)*(\-[a-zA-Z0-9]+)*\.[a-zA-Z0-9]{2,4}$/");
 define("REGEX_USERNAME", "/^[a-zA-Z0-9]+(\_[a-zA-Z0-9]+)*$/");
+define("REGEX_PASSWORD", "/^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/");
 
 function checkMailIsValid($mail)
 {
@@ -32,6 +33,8 @@ function checkUserNameIsValid($user_name)
 
 function checkPasswordIsValid($password, $confirm_password)
 {
+	if (preg_match(REGEX_PASSWORD, $password) == 0)
+		return (1);
 	if (strlen($password) < 8)
 		return (1);
 	if ($password != $confirm_password)
@@ -76,7 +79,7 @@ function checkCreateForm($mail, $user_name, $password, $password_confirm)
 	if (checkUserNameIsValid($user_name))
 		$error[] = ['user_name', 'Please enter a valid username'];
 	if (checkPasswordIsValid($password, $password_confirm) == 1)
-		$error[] = ['password', 'Please enter a password with at least 8 characters'];
+		$error[] = ['password', 'Please enter a password with at least 8 characters, one number and one letter'];
 	if (checkPasswordIsValid($password, $password_confirm) == 2)
 		$error[] = ['password_confirm', 'Please enter the same password'];
 	if (checkMailAlreadyExists($mail))

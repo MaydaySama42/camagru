@@ -23,7 +23,7 @@ function sendAccountConfirmationLink($mail, $user_id, $confirm)
 		'confirm account creation',
 		"hi, welcome to camagru !\n\n
 		please confirm your account by clicking this link:\n\n 
-		http://localhost/camagru/view/?view=confirm&user_id=" . $user_id . "&confirm=" . $confirm . "\n\n
+		http://10.11.200.226/view/?view=confirm&user_id=" . $user_id . "&confirm=" . $confirm . "\n\n
 		hope we'll see you soon !\n\n
 		camagru team",
 		'From: team@camagru.com' . "\r\n" . 'Reply-To: team@camagru.com' . "\r\n");

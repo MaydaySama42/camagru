@@ -26,8 +26,6 @@ function sendResponse($response, $code)
 {
 	echo json_encode($response);
 	http_response_code($code);
-	header("Access-Control-Allow-Origin: http://google.fr");
-	header("Vary: Origin");
 	return ($code == 200 ? 0 : 1);
 }
 

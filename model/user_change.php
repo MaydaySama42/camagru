@@ -74,7 +74,7 @@ function checkPasswordChange($password, $password_confirm)
 	$error = [];
 
 	if (checkPasswordIsValid($password, $password_confirm) == 1)
-		$error[] = ['send_password', 'Please enter a password with at least 8 characters'];
+		$error[] = ['send_password', 'Please enter a password with at least 8 characters, one number and one letter'];
 	if (checkPasswordIsValid($password, $password_confirm) == 2)
 		$error[] = ['send_password', 'Please enter the same password'];
 	return ($error);

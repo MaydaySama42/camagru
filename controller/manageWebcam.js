@@ -6,7 +6,7 @@
 /*   By: mdalil <mdalil@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/08/04 17:05:52 by mayday            #+#    #+#             */
-/*   Updated: 2019/08/08 22:50:10 by mdalil           ###   ########.fr       */
+/*   Updated: 2019/08/09 02:30:09 by mdalil           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,6 @@ class WebcamManager {jj
 		this.stream.getVideoTracks()[0].stop();
 		this.stream = null;
 	}
-	
 }
 
 let webcam = null;
